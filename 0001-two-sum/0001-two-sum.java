@@ -1,13 +1,25 @@
 class Solution {
-    public int[] twoSum(int[] nums, int target) {
-        int n = nums.length;
-        for (int i = 0; i < n - 1; i++) {
-            for (int j = i + 1; j < n; j++) {
-                if (nums[i] + nums[j] == target) {
-                    return new int[]{i, j};
+    public static void main(String[] args){
+        
+        int[] nums = {3,2,4};
+        int target = 6;
+        
+        twoSum(nums,target);  // 1,6 6-4 = 2 
+        
+    }
+    public static int[] twoSum(int[] nums, int target) {
+        
+        
+        for(int i=0; i<nums.length; i++){
+            for(int j=i+1;j<nums.length;j++){
+                if(nums[j] == target-nums[i]){
+                    return new int[]{i,j};
                 }
+                
             }
         }
-        return new int[]{}; // No solution found
+        
+        return null;
+        
     }
 }
